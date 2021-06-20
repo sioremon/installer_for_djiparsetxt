@@ -14,4 +14,4 @@ cd
 mkdir /usr/local/opt/djiparsetxt
 mv /tmp/djiparsetxt/djiparsetxt /usr/local/opt/djiparsetxt
 echo "export PATH=$PATH:/usr/local/opt/djiparsetxt" >> ./.zshrc
-source ~/.zshrc
+source .zshrc
