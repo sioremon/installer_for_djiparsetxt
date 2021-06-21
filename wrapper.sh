@@ -3,8 +3,8 @@ echo $1
 mkdir $1/csv
 mkdir $1/image
 ls $1/DJIFlightRecord_*| while read filename;do
-    touch ./csv/${filename%.*}.csv
-    djiparsetxt $filename > ./csv/${filename%.*}.csv
+    touch $1/csv/${filename%.*}.csv
+    djiparsetxt $filename > $1/csv/${filename%.*}.csv
 done
 
-mv *jpg ./image
+mv *jpg $1/image
