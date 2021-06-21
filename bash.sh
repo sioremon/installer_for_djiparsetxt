@@ -16,11 +16,25 @@ if [[ ! -d /usr/local/opt/djiparsetxt ]]; then
 elif [[ ! -f /usr/local/opt/djiparsetxt/djiparsetxt ]]; then
     cp /tmp/djiparsetxt/djiparsetxt /usr/local/opt/djiparsetxt
 fi 
-
-grep 'export PATH=$PATH:/usr/local/opt/djiparsetxt' ~/.bash_profile >> /dev/null
-if [! $? -eq 0];then
-    grep 'export PATH=$PATH:/usr/local/opt/djiparsetxt' ~/.bashrc >> /dev/null
-    if [! $? -eq 0];then
+if [[ -d ~./bash_profile ]]; then
+    grep 'export PATH=$PATH:/usr/local/opt/djiparsetxt' ~/.bash_profile >> /dev/null
+    if [ ! $? -eq 0 ];then
+        if [[ -d ~./bashrc ]]; then
+            grep 'export PATH=$PATH:/usr/local/opt/djiparsetxt' ~/.bashrc >> /dev/null
+            if [ ! $? -eq 0 ];then
+                echo "export PATH=$PATH:/usr/local/opt/djiparsetxt" >> ~/.bash_profile
+            fi
+        else
+            echo "export PATH=$PATH:/usr/local/opt/djiparsetxt" >> ~/.bash_profile
+        fi
+    fi
+elif [[ ! -d ~./bash_profile ]]; then #.bash_profileがあったら
+    if [[ -d ~./bashrc ]]; then #.bashrcがあったら
+        grep 'export PATH=$PATH:/usr/local/opt/djiparsetxt' ~/.bashrc >> /dev/null
+        if [ ! $? -eq 0 ];then #.bashrcにパスがなかったら
+            echo "export PATH=$PATH:/usr/local/opt/djiparsetxt" >> ~/.bash_profile
+        fi
+    else
         echo "export PATH=$PATH:/usr/local/opt/djiparsetxt" >> ~/.bash_profile
     fi
 fi

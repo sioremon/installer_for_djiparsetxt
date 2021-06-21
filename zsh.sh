@@ -18,7 +18,11 @@ elif [[ ! -f /usr/local/opt/djiparsetxt/djiparsetxt ]]; then
     cp /tmp/djiparsetxt/djiparsetxt /usr/local/opt/djiparsetxt
 fi 
 
-grep 'export PATH=$PATH:/usr/local/opt/djiparsetxt' ~/.zshrc >> /dev/null
-if [! $? -eq 0];then
-    echo "export PATH=$PATH:/usr/local/opt/djiparsetxt" >> ./.zshrc
+if [[ ! -d ~/.zshrc ]]; then
+    echo "export PATH=$PATH:/usr/local/opt/djiparsetxt" >> ~/.zshrc
+else
+    grep 'export PATH=$PATH:/usr/local/opt/djiparsetxt' ~/.zshrc >> /dev/null
+    if [ ! $? -eq 0 ];then
+        echo "export PATH=$PATH:/usr/local/opt/djiparsetxt" >> ~/.zshrc
+    fi
 fi
