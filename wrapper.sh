@@ -1,4 +1,5 @@
 #/bin/bash
+declare -a filename
 mkdir $1/csv
 mkdir $1/image
 ls $1/DJIFlightRecord_*| while read filepath;do
