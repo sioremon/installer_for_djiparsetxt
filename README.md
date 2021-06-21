@@ -15,6 +15,6 @@ CLIの操作に慣れてない人向けに書いています.
 
 ## 使い方
 - DJIのフライトログ(TXT形式)を読み込ませます. 以下の```/path/to/file.TXT```は読み込ませたいファイルまでのパスを書いてください.
-```djiparsetxt path/to/file.TXT```
+```log2csv path/to/file.TXT```
 
     
