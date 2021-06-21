@@ -4,7 +4,7 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 brew install git
-
+CURRENT=$(cd $(dirname $0);pwd)
 cd
 cd /tmp
 git clone https://github.com/uav4geo/djiparsetxt.git
@@ -15,13 +15,13 @@ cd `dirname $0` #このスクリプトが置かれているパスまで戻って
 if [[ ! -d /usr/local/opt/djiparsetxt ]]; then #ディレクトリの確認
     mkdir /usr/local/opt/djiparsetxt
     cp /tmp/djiparsetxt/djiparsetxt /usr/local/opt/djiparsetxt
-    cp ./wrapper.sh /usr/local/opt/djiparsetxt
+    cp $CURRENT/wrapper.sh /usr/local/opt/djiparsetxt
 elif [[ ! -f /usr/local/opt/djiparsetxt/djiparsetxt ]]; then
     cp /tmp/djiparsetxt/djiparsetxt /usr/local/opt/djiparsetxt
 fi
 
 if [[ ! -f /usr/local/opt/djiparsetxt/wrapper.sh ]]; then
-        cp ./wrapper.sh /usr/local/opt/djiparsetxt
+        cp $CURRENT/wrapper.sh /usr/local/opt/djiparsetxt
 fi
 
 if [[ ! -f ~/.zshrc ]]; then
