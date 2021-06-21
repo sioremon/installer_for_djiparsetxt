@@ -10,6 +10,3 @@ case $SHELL in
         source ~/.zshrc
     ;;
 esac
-
-
-
