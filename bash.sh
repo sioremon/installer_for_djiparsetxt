@@ -51,24 +51,24 @@ fi
 
 #エイリアスの確認
 if [[ -f ~./bash_profile ]]; then #.bash_profileがあったら
-    grep 'alias log2csv='wrapper.sh'' ~/.bash_profile >> /dev/null
+    grep 'alias log2csv='wrapper.sh $PWD'' ~/.bash_profile >> /dev/null
     if [ ! $? -eq 0 ];then
         if [[ -f ~./bashrc ]]; then
-            grep 'alias log2csv='wrapper.sh'' ~/.bashrc >> /dev/null
+            grep 'alias log2csv='wrapper.sh $PWD'' ~/.bashrc >> /dev/null
             if [ ! $? -eq 0 ];then
-                echo "alias log2csv='wrapper.sh'" >> ~/.bash_profile
+                echo "alias log2csv='wrapper.sh $PWD'" >> ~/.bash_profile
             fi
         else
-            echo "alias log2csv='wrapper.sh'" >> ~/.bash_profile
+            echo "alias log2csv='wrapper.sh $PWD'" >> ~/.bash_profile
         fi
     fi
 elif [[ ! -f ~./bash_profile ]]; then #.bash_profileがなかったら
     if [[ -f ~./bashrc ]]; then #.bashrcがあるか確認する
-        grep 'alias log2csv='wrapper.sh'' ~/.bashrc >> /dev/null
+        grep 'alias log2csv='wrapper.sh $PWD'' ~/.bashrc >> /dev/null
         if [ ! $? -eq 0 ];then #.bashrcにパスがなかったら
-            echo "alias log2csv='wrapper.sh'" >> ~/.bash_profile
+            echo "alias log2csv='wrapper.sh $PWD'" >> ~/.bash_profile
         fi
     else
-        echo "alias log2csv='wrapper.sh'" > ~/.bash_profile
+        echo "alias log2csv='wrapper.sh $PWD'" > ~/.bash_profile
     fi
 fi

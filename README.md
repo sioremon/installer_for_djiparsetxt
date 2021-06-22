@@ -16,8 +16,10 @@ CLIの操作に慣れてない人向けに書いています.
 - ```install finished!!!```と表示されたら終了です. 
 
 ## 使い方
-- DJIのフライトログ(TXT形式)を読み込ませます. 以下の```/path/to/file.TXT```は読み込ませたいファイルまでのパスを書いてください.  
+- DJIのフライトログ(txt形式)を読み込ませます. csvに変換したい```FlightRecord```が保存されているディレクトリまでのパスを書きます.
+```log2csv path/to/file.txt```
 
-```log2csv path/to/file.TXT```
+## その他
+DJI GOから取得したデータで動作確認済みです. 
 
     

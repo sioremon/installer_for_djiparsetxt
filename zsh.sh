@@ -26,14 +26,14 @@ fi
 
 if [[ ! -f ~/.zshrc ]]; then
     echo "export PATH=$PATH:/usr/local/opt/djiparsetxt" >> ~/.zshrc
-    echo "alias log2csv='wrapper.sh'" >> ~/.zshrc
+    echo "alias log2csv='wrapper.sh $PWD'" >> ~/.zshrc
 else
     grep 'export PATH=$PATH:/usr/local/opt/djiparsetxt' ~/.zshrc >> /dev/null
     if [ ! $? -eq 0 ];then
         echo "export PATH=$PATH:/usr/local/opt/djiparsetxt" >> ~/.zshrc
     fi
-    grep 'alias log2csv='wrapper.sh'' >> /dev/null
+    grep 'alias log2csv='wrapper.sh $PWD'' >> /dev/null
     if [ ! $? -eq 0 ];then
-        echo "alias log2csv='wrapper.sh'" >> ~/.zshrc
+        echo "alias log2csv='wrapper.sh $PWD'" >> ~/.zshrc
     fi
 fi
