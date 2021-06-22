@@ -16,3 +16,4 @@ mv $dir/*.csv $dir/CSV
 ls $1 | grep embedded* | while read img;do
     mv $1/$img $dir/image
 done
+
