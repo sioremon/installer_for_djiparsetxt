@@ -1,9 +1,9 @@
 #!/bin/sh
 
 #This script is intended to be run on a mac
-#/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-#brew install git
+brew install git
 CURRENT=$(cd $(dirname $0);pwd)
 cd
 cd /tmp
