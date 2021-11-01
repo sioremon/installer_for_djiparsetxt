@@ -41,7 +41,7 @@ elif [ ! -f ~./bashrc ]; then #.bashrcがなかったら
             echo "export PATH=$PATH:/opt/djiparsetxt" >> ~/.bashrc
         fi
     else
-        echo "export PATH=$PATH:/opt/djiparsetxt" > ~/.bashrc
+        echo "export PATH=$PATH:/opt/djiparsetxt" >> ~/.bashrc
     fi
 fi
 
@@ -65,7 +65,7 @@ elif [ ! -f ~./bashrc ]; then #.bashrcがなかったら
             echo "alias log2csv='wrapper.sh $PWD'" >> ~/.bashrc
         fi
     else
-        echo "alias log2csv='wrapper.sh $PWD'" > ~/.bashrc
+        echo "alias log2csv='wrapper.sh $PWD'" >> ~/.bashrc
     fi
 fi
 

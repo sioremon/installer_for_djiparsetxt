@@ -45,7 +45,7 @@ elif [ ! -f ~./bash_profile ]; then #.bash_profileがなかったら
             echo "export PATH=$PATH:/usr/local/opt/djiparsetxt" >> ~/.bash_profile
         fi
     else
-        echo "export PATH=$PATH:/usr/local/opt/djiparsetxt" > ~/.bash_profile
+        echo "export PATH=$PATH:/usr/local/opt/djiparsetxt" >> ~/.bash_profile
     fi
 fi
 
@@ -69,6 +69,6 @@ elif [ ! -f ~./bash_profile ]; then #.bash_profileがなかったら
             echo "alias log2csv='wrapper.sh $PWD'" >> ~/.bash_profile
         fi
     else
-        echo "alias log2csv='wrapper.sh $PWD'" > ~/.bash_profile
+        echo "alias log2csv='wrapper.sh $PWD'" >> ~/.bash_profile
     fi
 fi
